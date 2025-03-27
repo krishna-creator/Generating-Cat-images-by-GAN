@@ -11,30 +11,28 @@ This project demonstrates the generation of cat images using Generative Adversar
 The standard GAN loss functions used in this project are:
 
 - **Generator Loss**:
-
-  $$
-  \ell_G  =  -\mathbb{E}_{z \sim p(z)}\left[\log D(G(z))\right]
-  $$
+$$
+\ell_G = -\mathbb{E}_{z \sim p(z)}\left[\log D(G(z))\right]
+$$
 
 - **Discriminator Loss**:
-  $$
-  \ell_D = -\mathbb{E}_{x \sim p_\text{data}}\left[\log D(x)\right] - \mathbb{E}_{z \sim p(z)}\left[\log \left(1-D(G(z))\right)\right]
-  $$
+$$
+\ell_D = -\mathbb{E}_{x \sim p_\text{data}}\left[\log D(x)\right] - \mathbb{E}_{z \sim p(z)}\left[\log \left(1-D(G(z))\right)\right]
+$$
 
 ### Least Squares GAN Loss
 
-An alternative loss function is implemented as described in the [Least Squares GAN paper](https://arxiv.org/abs/1611.04076):
+An alternative loss function from the [Least Squares GAN paper](https://arxiv.org/abs/1611.04076):
 
 - **Generator Loss**:
-
-  $$
-  \ell_G  =  \frac{1}{2}\mathbb{E}_{z \sim p(z)}\left[\left(D(G(z))-1\right)^2\right]
-  $$
+$$
+\ell_G = \frac{1}{2}\mathbb{E}_{z \sim p(z)}\left[\left(D(G(z)) - 1\right)^2\right]
+$$
 
 - **Discriminator Loss**:
-  $$
-  \ell_D = \frac{1}{2}\mathbb{E}_{x \sim p_\text{data}}\left[\left(D(x)-1\right)^2\right] + \frac{1}{2}\mathbb{E}_{z \sim p(z)}\left[ \left(D(G(z))\right)^2\right]
-  $$
+$$
+\ell_D = \frac{1}{2}\mathbb{E}_{x \sim p_\text{data}}\left[\left(D(x) - 1\right)^2\right] + \frac{1}{2}\mathbb{E}_{z \sim p(z)}\left[\left(D(G(z))\right)^2\right]
+$$
 
 ## How GANs Work
 
